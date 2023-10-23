@@ -1,0 +1,18 @@
+import java.util.*;
+
+
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		int number = 20;
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		
+		String binary  =  Integer.toBinaryString(num);
+		System.out.println(binary);
+
+	}
+
+}
