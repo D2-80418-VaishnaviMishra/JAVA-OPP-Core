@@ -1,0 +1,12 @@
+package Classwork;
+
+public class prac {
+
+	public static void main(String[] args) {
+	int a ;
+	String s;
+	System.out.println(a);
+
+	}
+
+}

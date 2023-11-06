@@ -1,0 +1,30 @@
+package Practice;
+
+
+class Genericc<T extends Number>{
+	T Field;
+
+	public T getField() {
+		return Field;
+	}
+
+	public void setField(T field) {
+		this.Field = field;
+	}
+	
+}
+
+
+
+
+
+public class Prog2 {
+
+	public static void main(String[] args) {
+		Genericc <Integer> g = new Genericc <Integer>();
+		g.setField(50);
+		System.out.println(g.getField());
+
+	}
+
+}

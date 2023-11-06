@@ -1,0 +1,13 @@
+package Classwork;
+import java.util.Arrays;
+
+public class Prac1 {
+
+	public static void main(String[] args) {
+		int []arr = {5,554,99,55,787,12,};
+		System.out.println(Arrays.toString(arr));
+		
+
+	}
+
+}

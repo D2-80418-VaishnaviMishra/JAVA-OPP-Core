@@ -1,0 +1,81 @@
+package Classwork;
+import java.util.*;
+
+
+class Personn implements Comparable<Personn>{
+	int id;
+	String name;
+	double sal;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	public Personn(int id, String name, double sal) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.sal = sal;
+	}
+	public Personn() {
+		super();
+		this.id = 0;
+		this.name = " ";
+		this.sal = 0.0;
+	}
+
+	@Override
+	public int compareTo(Personn p1) {
+		int diff;
+		diff = this.id - p1.id;
+		return diff;
+	}
+	
+	 public void display() {
+		System.out.println(this.id+" "+this.name+" "+this.sal);
+	}
+	
+	
+}
+
+
+
+
+public class Prac3 {
+
+	public static void main(String[] args) {
+		Personn[] array = { 
+				new Personn(5,"Dog",5000.2),
+				new Personn(6,"Dog",5000.2),
+				new Personn(1,"Cat",45154),
+				new Personn(9,"Tiger",45168),
+				new Personn(5,"Monkey",54644)};
+		
+		
+		for(Personn ele:array) {
+			ele.display();
+			}
+		System.out.println();
+		Arrays.sort(array);
+		for(Personn ele:array) {
+		ele.display();
+		}
+		
+		
+
+	}
+
+}

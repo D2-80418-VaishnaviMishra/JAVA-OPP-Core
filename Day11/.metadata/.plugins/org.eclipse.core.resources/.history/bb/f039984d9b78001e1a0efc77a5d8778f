@@ -1,0 +1,57 @@
+package Classwork;
+import java.util.*;
+
+class Person{
+	String name;
+	int id;
+	double sal;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	public void accept() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter name id sal");
+		this.name = sc.next();
+		this.id = sc.nextInt();
+		this.sal = sc.nextDouble();
+	}
+	
+	
+	
+}
+
+
+
+public class Prac1 {
+
+	public static void main(String[] args) {
+		/*
+		 * int []arr = {5,554,99,55,787,12,}; Arrays.sort(arr);
+		 * System.out.println(Arrays.toString(arr));
+		 */
+		
+		for(int i = 0;i<5;i++) {
+			Person p = new Person();
+			p.accept();
+		}
+		
+
+	}
+
+}

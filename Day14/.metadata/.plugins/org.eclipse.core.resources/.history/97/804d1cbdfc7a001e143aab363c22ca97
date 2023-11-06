@@ -1,0 +1,64 @@
+package classwork;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Prog {
+	public static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+	public static final String DB_URL = "jdbc:mysql://localhost:3306/test";
+	public static final String DB_USER = "D2_80418_Vaishnavi";
+	public static final String DB_PASSWORD = "80418";
+	
+	static {
+		try {
+			Class.forName(DB_DRIVER);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.exit(0);
+		}
+	}
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		try(Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+		
+			String sql = "INSERT INTO candidates VALUES(default, ?, ?, ?)"; // parameterized query
+			try(PreparedStatement stmt = con.prepareStatement(sql)) {
+				System.out.print("Enter Name: ");
+				String name = sc.next();
+				System.out.print("Enter Party: ");
+				String party = sc.next();
+				System.out.print("Enter Votes: ");
+				int votes = sc.nextInt();
+				
+				stmt.setString(1, name);
+				stmt.setString(2, party);
+				stmt.setInt(3, votes);
+				
+				try(ResultSet rs = stmt.executeQuery()) {
+					while(rs.next()) {
+						int id = rs.getInt("id");
+						String namee = rs.getString("name");
+						String partyy = rs.getString("party");
+						int votess = rs.getInt("votes");
+						System.out.printf("%d, %s, %s, %d\n", id, name, party, votes);
+					}
+				
+				int count = stmt.executeUpdate();
+				System.out.println("Rows Affected: " + count);
+			} // stmt.close(); 
+			
+		} // con.close(); 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+		
+		
+	}
+
+

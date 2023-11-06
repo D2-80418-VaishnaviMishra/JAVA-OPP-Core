@@ -1,0 +1,17 @@
+package com.sunbeam;
+
+public class Clerk extends Employee{
+	
+
+	public Clerk() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public double calcSalary() {
+		super.setSalary(50000);
+		return super.getSalary();
+	}
+	
+	
+}

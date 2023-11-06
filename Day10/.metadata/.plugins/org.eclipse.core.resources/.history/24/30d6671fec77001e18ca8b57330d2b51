@@ -1,0 +1,27 @@
+package Assignment;
+
+import java.util.Scanner;
+
+public class Program2 {
+	
+	public static void main(String[] args){
+	
+	//int arr[] = {22,14,53,69,78,5} ;
+		int arr[] = new int[6];
+	
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter");
+for(int i = 0;i<6;i++) {
+	
+	sc.nextInt(arr[i]);
+}
+	int min = arr[0];
+	for(int i = 0;i<6;i++) {
+			
+	
+	if(min>=arr[i]) {
+		min = arr[i];
+	}
+	}
+	System.out.println("min no is "+ min);
+}}

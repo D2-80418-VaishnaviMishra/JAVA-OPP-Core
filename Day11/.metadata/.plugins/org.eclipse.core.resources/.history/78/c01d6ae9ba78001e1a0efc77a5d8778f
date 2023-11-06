@@ -1,0 +1,153 @@
+package Classwork;
+
+import java.util.*;
+
+class Person implements Comparable<Person> {
+	String name;
+	int id;
+	double sal;
+	
+	
+
+	public Person() {
+		super();
+	}
+
+	public Person(String string, int i, double d) {
+		this.name = string;
+		this.id = i;
+		this.sal = d;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public double getSal() {
+		return sal;
+	}
+
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+
+	public void accept() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter name id sal");
+		this.name = sc.next();
+		this.id = sc.nextInt();
+		this.sal = sc.nextDouble();
+
+	}
+
+	public void display() {
+		System.out.println(this.name + "          " + this.id + "           " + this.sal);
+	}
+
+	@Override
+	public int compareTo(Person p1) {
+		int dif;
+		dif = this.id - p1.id;
+		return dif;
+	}
+
+
+}
+
+class sortingstring implements Comparator<Person>{
+
+	@Override
+	public int compare(Person p1, Person p2) {
+		
+		int diff;
+		diff = p1.getName().compareTo(p2.getName());
+		
+		return diff;
+	}
+	
+	
+}
+
+class sortingsal implements Comparator<Person>{
+
+	@Override
+	public int compare(Person p1, Person p2) {
+		int diff;
+		diff = Double.compare(p1.getSal(), p2.getSal());
+		if(diff==0) {
+			diff = p1.getName().compareTo(p2.getName());
+		}
+		
+		
+		return diff;
+	}
+	
+}
+
+public class Prac1 {
+
+	public static void main(String[] args) {
+		/*
+		 * int []arr = {5,554,99,55,787,12,}; Arrays.sort(arr);
+		 * System.out.println(Arrays.toString(arr));
+		 */
+		Person[] array = {
+				new Person("Dog",5,5000.2),
+				new Person("Owl",8,5000.2),
+				new Person("Cat",1,45154),
+				new Person("Tiger",9,45168),
+				new Person("Monkey",7,546445)
+		}; 
+		for(int i = 0;i<5;i++) {
+			array[i].display();
+		}
+		
+		Arrays.sort(array);
+		System.out.println();
+		System.out.println("After sort");
+		
+		for(int i = 0;i<5;i++) {
+			array[i].display();
+		}
+		System.out.println();
+		 sortingstring s = new sortingstring();
+		 Arrays.sort(array,s);
+
+			for(int i = 0;i<5;i++) {
+				array[i].display();
+			}
+			
+			System.out.println();
+			sortingsal s2 = new sortingsal();
+			Arrays.sort(array,s2);
+			for(int i = 0;i<5;i++) {
+				array[i].display();
+			}
+			
+		/*
+		for(int i = 0;i<2;i++) {
+			array[i] = new Person();
+			array[i].accept();
+		}
+		array[0].display();
+
+		*/
+		
+
+		}
+
+}
+
+

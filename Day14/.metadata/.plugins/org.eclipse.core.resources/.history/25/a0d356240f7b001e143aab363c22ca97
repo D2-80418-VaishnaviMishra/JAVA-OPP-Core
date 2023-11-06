@@ -1,0 +1,44 @@
+package classwork;
+import java.util.*;
+import java.sql.*;
+
+public class Prac2 {
+	public static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+	public static final String DB_URL = "jdbc:mysql://localhost:3306/test";
+	public static final String DB_USER = "D2_80418_Vaishnavi";
+	public static final String DB_PASSWORD = "80418";
+	
+	static {
+		try {
+			Class.forName(DB_DRIVER);
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.exit(0);
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		try(Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)){
+			String sql = "SELECT * FROM candidates > ; 
+			try(PreparedStatement stmt = con.prepareStatement(sql)){
+				ResultSet rs = stmt.executeQuery();
+				while(rs.next()) {
+					String name = rs.getString("name");
+					String party = rs.getString("party");
+					int votes = rs.getInt("votes");
+					System.out.printf(" %s, %s, %d\n", name, party, votes);
+				}
+				
+						
+			}
+			
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

@@ -1,0 +1,42 @@
+package Practice;
+
+class Generic <T>{
+	public T p1;
+
+	public T getP1() {
+		return p1;
+	}
+
+	public void setP1(T p1) {
+		this.p1 = p1;
+	}
+
+	@Override
+	public String toString() {
+		return "Generic [p1=" + p1 + "]";
+	}
+	
+	
+	
+}
+
+
+
+public class prac1 {
+
+	public static void main(String[] args) {
+		
+		Generic <String> o1 = new Generic <String>();
+		o1.setP1("Robust");
+		System.out.println(o1.getP1());
+		System.out.println(o1);
+		//System.out.println(o1.toString());
+		/*
+		 * Generic <Integer> o2 = new Generic <Integer>(); o2.setP1(20);
+		 * System.out.println(o2.getP1());
+		 */
+		
+
+	}
+
+}

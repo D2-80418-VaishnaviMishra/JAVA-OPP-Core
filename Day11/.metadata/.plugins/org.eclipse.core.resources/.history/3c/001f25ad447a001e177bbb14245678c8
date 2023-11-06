@@ -1,0 +1,21 @@
+package Classwork;
+import java.util.*;
+
+public class Prac5 {
+
+	public static void main(String[] args) {
+	       List l1 = new LinkedList<>();
+	       l1.add(20);
+	       l1.add(20);
+	       l1.add(30);
+	       l1.add(40);
+	       
+	       System.out.println(l1.toString());
+	       
+	       l1.remove(1);
+	       System.out.println(l1.toString());
+	       
+
+	}
+
+}

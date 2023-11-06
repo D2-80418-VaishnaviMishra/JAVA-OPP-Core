@@ -1,0 +1,72 @@
+package Classwork;
+
+class Person implements Comparable<Person>{
+	int id;
+	String name;
+	double sal;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	public Person(int id, String name, double sal) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.sal = sal;
+	}
+	public Person() {
+		super();
+		this.id = 0;
+		this.name = " ";
+		this.sal = 0.0;
+	}
+
+	@Override
+	public int compareTo(Person p1) {
+		int diff;
+		diff = this.id - p1.id;
+		return diff;
+	}
+	
+	 public void display() {
+		System.out.println(this.id+" "+this.name+" "+this.sal);
+	}
+	
+	
+}
+
+
+
+
+public class Prac3 {
+
+	public static void main(String[] args) {
+		Person[] array = { 
+				new Person(5,"Dog",5000.2),
+				new Person(6,"Dog",5000.2),
+				new Person(1,"Cat",45154),
+				new Person(9,"Tiger",45168),
+				new Person(5,"Monkey",54644)};
+		
+		for(Person ele:array) {
+			ele.display();
+		}
+		
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package Classwork;
+import java.util.*;
+
+public class prac4 {
+
+	public static void main(String[] args) {
+		Collection <String> c = new ArrayList<>();
+		c.add("stars");
+		c.add("in");
+		c.add("the");
+		c.add("sky");
+		
+		c.toString();
+
+	}
+
+}
